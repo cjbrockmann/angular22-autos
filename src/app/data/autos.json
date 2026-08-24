@@ -1,0 +1,132 @@
+[
+  {
+    "ID": 1,
+    "Marke": "Ford",
+    "Modell": "Focus II",
+    "Fahrgestellnummer": "AWFT876Z-8987",
+    "KundenID": 1,
+    "HaendlerID": 1,
+    "Erstzulassung": "2000-01-01",
+    "ErstKennzeichen": "F-A 123"
+  },
+  {
+    "ID": 2,
+    "Marke": "Mercedes",
+    "Modell": "<b>Mercedes-Benz GLC F-Cell</b> (Wasserstoffantrieb)",
+    "Fahrgestellnummer": "EDREDREDR23232-45",
+    "KundenID": 1,
+    "HaendlerID": 2,
+    "Erstzulassung": "2018-01-01",
+    "ErstKennzeichen": "M-A 1"
+  },
+  {
+    "ID": 3,
+    "Marke": "Quant",
+    "Modell": "<b>Quantino</b> (Flusszellenantrieb)",
+    "Fahrgestellnummer": "1234567890123456789",
+    "KundenID": 1,
+    "HaendlerID": 4,
+    "Erstzulassung": "2018-06-25",
+    "ErstKennzeichen": "F-AZ 410"
+  },
+  {
+    "ID": 4,
+    "Marke": "Ford",
+    "Modell": "Mondeo",
+    "Fahrgestellnummer": "ASDFÖLKÖLKADSF",
+    "KundenID": 3,
+    "HaendlerID": 1,
+    "Erstzulassung": "2015-01-01",
+    "ErstKennzeichen": "WI-LD 234"
+  },
+  {
+    "ID": 5,
+    "Marke": "Ford",
+    "Modell": "Focus CDI",
+    "Fahrgestellnummer": "FDGSFDGSADFDS",
+    "KundenID": 2,
+    "HaendlerID": 1,
+    "Erstzulassung": "2015-02-28",
+    "ErstKennzeichen": "MZ-ID 1"
+  },
+  {
+    "ID": 6,
+    "Marke": "Mercedes",
+    "Modell": "200",
+    "Fahrgestellnummer": "FSGSFDGSDFG",
+    "KundenID": 4,
+    "HaendlerID": 2,
+    "Erstzulassung": "2014-06-05",
+    "ErstKennzeichen": "M-ZZ 546"
+  },
+  {
+    "ID": 7,
+    "Marke": "Ford",
+    "Modell": "Focus IV",
+    "Fahrgestellnummer": "ADSFADSFASDF",
+    "KundenID": 2,
+    "HaendlerID": 1,
+    "Erstzulassung": "2018-01-01",
+    "ErstKennzeichen": "F-WI 123"
+  },
+  {
+    "ID": 8,
+    "Marke": "Ford",
+    "Modell": "Focus I",
+    "Fahrgestellnummer": "AWFT876Z-8987",
+    "KundenID": 1,
+    "HaendlerID": 1,
+    "Erstzulassung": "2000-01-01",
+    "ErstKennzeichen": "F-ZZ 222"
+  },
+  {
+    "ID": 9,
+    "Marke": "Ford",
+    "Modell": "Focus II",
+    "Fahrgestellnummer": "AWFT876Z-8987",
+    "KundenID": 2,
+    "HaendlerID": 1,
+    "Erstzulassung": "2000-01-01",
+    "ErstKennzeichen": "F-ZZ 223"
+  },
+  {
+    "ID": 10,
+    "Marke": "Ford",
+    "Modell": "Focus III",
+    "Fahrgestellnummer": "AWFT876Z-8987",
+    "KundenID": 3,
+    "HaendlerID": 1,
+    "Erstzulassung": "2000-01-01",
+    "ErstKennzeichen": "F-ZZ 224"
+  },
+  {
+    "ID": 11,
+    "Marke": "Ford",
+    "Modell": "Focus I",
+    "Fahrgestellnummer": "AWFT876Z-8987",
+    "KundenID": 4,
+    "HaendlerID": 1,
+    "Erstzulassung": "2000-01-01",
+    "ErstKennzeichen": "F-ZZ 225"
+  },
+  {
+    "ID": 12,
+    "Marke": "Mercedes",
+    "Modell": "300",
+    "Fahrgestellnummer": "FSGSFD5554",
+    "KundenID": 2,
+    "HaendlerID": 2,
+    "Erstzulassung": "2000-01-01",
+    "ErstKennzeichen": "WI-LL 123"
+  },
+  {
+    "ID": 13,
+    "Marke": "Mercedes",
+    "Modell": "500",
+    "Fahrgestellnummer": "ASDFJKLO1234",
+    "KundenID": 2,
+    "HaendlerID": 2,
+    "Erstzulassung": "1999-12-31",
+    "ErstKennzeichen": "F-AB 7"
+  }
+]

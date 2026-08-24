@@ -1,0 +1,15 @@
+#autoliste {
+  margin-left: 5% !important;
+  width: 90% !important;
+}
+
+.markenCombobox {
+  width: 300px !important;
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 600px) {
+  .buttonColumn {
+    width: 200px !important;
+  }
+}

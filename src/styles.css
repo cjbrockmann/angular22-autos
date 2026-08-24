@@ -1,0 +1,19 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#home {
+  margin-top: 20%;
+  width: 100%;
+  text-align: center;
+}
+
+#home a {
+  text-decoration: none;
+}

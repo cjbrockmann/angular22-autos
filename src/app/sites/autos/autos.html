@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col"><h3>Autos</h3></div>
+  <div class="col">
+    <select #automarke class="form-select markenCombobox" (change)="onBrandSelect(automarke.value)">
+      <option value="">{{ firstLabel() }}</option>
+      @for (brand of brands(); track brand) {
+        <option [value]="brand">{{ brand }}</option>
+      }
+    </select>
+  </div>
+</div>
+
+@if (cars(); as carList) {
+  <table class="table table-striped" id="autoliste" aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th style="max-width: 400px">ID</th>
+        <th>Marke</th>
+        <th>Modell</th>
+        <th class="buttonColumn">
+          <a routerLink="/autos/0" [queryParams]="{ viewstate: 'new' }">Neu</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (auto of carList; track auto.ID) {
+        <tr>
+          <td>{{ auto.ID }}</td>
+          <td>{{ auto.Marke }}</td>
+          <td [innerHTML]="auto.Modell"></td>
+          <td class="text-nowrap">
+            <a [routerLink]="['/autos', auto.ID]" [queryParams]="{ viewstate: 'details' }"
+              >Details</a
+            >
+            &nbsp;&nbsp;
+            <a [routerLink]="['/autos', auto.ID]" [queryParams]="{ viewstate: 'edit' }">Edit</a>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+} @else {
+  <p><em>Loading...</em></p>
+}
+<br /><br />

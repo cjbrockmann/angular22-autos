@@ -1,0 +1,58 @@
+[
+  {
+    "ID": 1,
+    "Firmenname": "Ford",
+    "PLZ": "65000",
+    "Ort": "Wiesbaden",
+    "Email": "info@fordautos949.de",
+    "Telefon": "12345678"
+  },
+  {
+    "ID": 2,
+    "Firmenname": "Mercedes Center",
+    "PLZ": "65000",
+    "Ort": "Wiesbaden",
+    "Email": "info@mercedes0008.de",
+    "Telefon": "234321"
+  },
+  {
+    "ID": 3,
+    "Firmenname": "Smart",
+    "PLZ": "60000",
+    "Ort": "Frankfurt",
+    "Email": "info@smart.de.de",
+    "Telefon": "2332323"
+  },
+  {
+    "ID": 4,
+    "Firmenname": "Quant",
+    "PLZ": "89000",
+    "Ort": "München",
+    "Email": "info@quant.de.de",
+    "Telefon": "111111"
+  },
+  {
+    "ID": 5,
+    "Firmenname": "Opel",
+    "PLZ": "55555",
+    "Ort": "Mainz",
+    "Email": "info@opel.de.de",
+    "Telefon": "22222222"
+  },
+  {
+    "ID": 6,
+    "Firmenname": "Tesla",
+    "PLZ": "62000",
+    "Ort": "Bad Homburg",
+    "Email": "info@tesla.de.de",
+    "Telefon": "55555555"
+  },
+  {
+    "ID": 7,
+    "Firmenname": "Ferrari",
+    "PLZ": "10000",
+    "Ort": "Hamburg",
+    "Email": "info@ferrari001.de",
+    "Telefon": "343434"
+  }
+]

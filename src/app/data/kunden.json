@@ -1,0 +1,40 @@
+[
+  {
+    "ID": 1,
+    "Nachname": "Müller",
+    "Vorname": "Hans",
+    "Anrede": "Herr",
+    "PLZ": "65000",
+    "Ort": "Wiesbaden",
+    "Email": "jemand@007.de",
+    "Telefon": "45454545"
+  },
+  {
+    "ID": 2,
+    "Nachname": "Meier",
+    "Vorname": "Anna Maria",
+    "Anrede": "Frau",
+    "PLZ": "65000",
+    "Ort": "Wiesbaden",
+    "Email": "nochjemand@007.de"
+  },
+  {
+    "ID": 3,
+    "Nachname": "Hallerfourd",
+    "Vorname": "Didi",
+    "Anrede": "Herr",
+    "PLZ": "89000",
+    "Ort": "München",
+    "Email": "komiker@654.de",
+    "Telefon": "3456789"
+  },
+  {
+    "ID": 4,
+    "Nachname": "Otto",
+    "Anrede": "",
+    "PLZ": "89000",
+    "Ort": "München",
+    "Email": "komiker@123.de",
+    "Telefon": "11111111"
+  }
+]
