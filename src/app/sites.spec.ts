@@ -74,6 +74,21 @@ describe('Autodetails', () => {
     );
   });
 
+  it('shows 9G-Tronic gears for a Mercedes diesel', async () => {
+    await TestBed.configureTestingModule({
+      providers: [...dataStoreTestProviders, provideRouter(routes)],
+    }).compileComponents();
+    seedDataStore();
+
+    const harness = await RouterTestingHarness.create();
+    await harness.navigateByUrl('/autos/14?viewstate=details', Autodetails);
+
+    const text = harness.routeNativeElement?.textContent ?? '';
+    expect(text).toContain('C 220 d');
+    expect(text).toContain('Automatik (9G-Tronic)');
+    expect(text).toContain('9');
+  });
+
   it('keeps the user in edit mode when required fields are missing', async () => {
     await TestBed.configureTestingModule({
       providers: [...dataStoreTestProviders, provideRouter(routes)],

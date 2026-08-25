@@ -141,5 +141,57 @@
     "Erstzulassung": "1999-12-31",
     "ErstKennzeichen": "F-AB 7",
     "src": "/autos/mercedes-benz.svg"
+  },
+  {
+    "ID": 14,
+    "Marke": "Mercedes",
+    "Modell": "C 220 d (Diesel, ca. 4 l/100 km)",
+    "Fahrgestellnummer": "WDD2050041A220001",
+    "KundenID": 1,
+    "HaendlerID": 2,
+    "Erstzulassung": "2019-03-12",
+    "ErstKennzeichen": "WI-MB 220",
+    "Getriebeart": "Automatik (9G-Tronic)",
+    "Gaenge": 9,
+    "src": "/autos/mercedes-benz.svg"
+  },
+  {
+    "ID": 15,
+    "Marke": "Mercedes",
+    "Modell": "E 220 d (Diesel, ca. 4 l/100 km)",
+    "Fahrgestellnummer": "WDD2130041A220002",
+    "KundenID": 2,
+    "HaendlerID": 2,
+    "Erstzulassung": "2020-06-18",
+    "ErstKennzeichen": "F-MB 221",
+    "Getriebeart": "Automatik (9G-Tronic)",
+    "Gaenge": 9,
+    "src": "/autos/mercedes-benz.svg"
+  },
+  {
+    "ID": 16,
+    "Marke": "Mercedes",
+    "Modell": "A 180 d (Diesel, ca. 4 l/100 km)",
+    "Fahrgestellnummer": "WDD1770121A180003",
+    "KundenID": 3,
+    "HaendlerID": 2,
+    "Erstzulassung": "2021-01-09",
+    "ErstKennzeichen": "MZ-MB 180",
+    "Getriebeart": "Automatik (9G-Tronic)",
+    "Gaenge": 9,
+    "src": "/autos/mercedes-benz.svg"
+  },
+  {
+    "ID": 17,
+    "Marke": "Mercedes",
+    "Modell": "CLA 180 d (Diesel, ca. 4 l/100 km)",
+    "Fahrgestellnummer": "WDD1180121A180004",
+    "KundenID": 4,
+    "HaendlerID": 2,
+    "Erstzulassung": "2022-04-04",
+    "ErstKennzeichen": "M-MB 181",
+    "Getriebeart": "Automatik (9G-Tronic)",
+    "Gaenge": 9,
+    "src": "/autos/mercedes-benz.svg"
   }
 ]

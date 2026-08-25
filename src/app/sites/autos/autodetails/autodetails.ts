@@ -77,6 +77,8 @@ export class Autodetails implements OnInit {
         HaendlerID: null,
         Erstzulassung: '',
         ErstKennzeichen: '',
+        Getriebeart: '',
+        Gaenge: null,
         src: '',
       };
     }
@@ -120,6 +122,8 @@ export class Autodetails implements OnInit {
       HaendlerID: null,
       Erstzulassung: '',
       ErstKennzeichen: '',
+      Getriebeart: '',
+      Gaenge: null,
       src: '',
     };
   }

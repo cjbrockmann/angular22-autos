@@ -59,6 +59,14 @@
           <th>ErstKennzeichen</th>
           <td>{{ auto.ErstKennzeichen }}</td>
         </tr>
+        <tr>
+          <th>Getriebeart</th>
+          <td>{{ auto.Getriebeart || '—' }}</td>
+        </tr>
+        <tr>
+          <th>Gänge</th>
+          <td>{{ auto.Gaenge ?? '—' }}</td>
+        </tr>
         @if (auto.src) {
           <tr>
             <th>Bild</th>
@@ -169,6 +177,31 @@
               class="form-control"
               [(ngModel)]="auto.ErstKennzeichen"
               name="erstkennzeichen"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Getriebeart</th>
+          <td>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="auto.Getriebeart"
+              name="getriebeart"
+              placeholder="z. B. Automatik"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Gänge</th>
+          <td>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="auto.Gaenge"
+              name="gaenge"
+              min="1"
+              placeholder="z. B. 9"
             />
           </td>
         </tr>
