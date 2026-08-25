@@ -53,6 +53,37 @@ describe('Autos', () => {
       'Neu',
     );
   });
+
+  it('sorts cars by brand when the Marke header is clicked', async () => {
+    await TestBed.configureTestingModule({
+      imports: [Autos],
+      providers: [...dataStoreTestProviders, provideRouter([])],
+    }).compileComponents();
+    seedDataStore();
+
+    const fixture = TestBed.createComponent(Autos);
+    await fixture.whenStable();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    const markeButton = [...compiled.querySelectorAll('th button')].find((button) =>
+      button.textContent?.includes('Marke'),
+    ) as HTMLButtonElement;
+    markeButton.click();
+    fixture.detectChanges();
+
+    const brands = [...compiled.querySelectorAll('tbody tr')].map(
+      (row) => row.querySelectorAll('td')[2]?.textContent?.trim(),
+    );
+    expect(brands[0]).toBe('Ford');
+    expect(brands.at(-1)).toBe('Quant');
+
+    markeButton.click();
+    fixture.detectChanges();
+    const reversed = [...compiled.querySelectorAll('tbody tr')].map(
+      (row) => row.querySelectorAll('td')[2]?.textContent?.trim(),
+    );
+    expect(reversed[0]).toBe('Quant');
+  });
 });
 
 describe('Autodetails', () => {

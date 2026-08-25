@@ -111,28 +111,6 @@
   },
   {
     "ID": 11,
-    "Marke": "Ford",
-    "Modell": "Focus I",
-    "Fahrgestellnummer": "AWFT876Z-8987",
-    "KundenID": 4,
-    "HaendlerID": 1,
-    "Erstzulassung": "2000-01-01",
-    "ErstKennzeichen": "F-ZZ 225",
-    "src": "/autos/ford.svg"
-  },
-  {
-    "ID": 12,
-    "Marke": "Mercedes",
-    "Modell": "300",
-    "Fahrgestellnummer": "FSGSFD5554",
-    "KundenID": 2,
-    "HaendlerID": 2,
-    "Erstzulassung": "2000-01-01",
-    "ErstKennzeichen": "WI-LL 123",
-    "src": "/autos/mercedes-benz.svg"
-  },
-  {
-    "ID": 13,
     "Marke": "Mercedes",
     "Modell": "500",
     "Fahrgestellnummer": "ASDFJKLO1234",
@@ -143,7 +121,7 @@
     "src": "/autos/mercedes-benz.svg"
   },
   {
-    "ID": 14,
+    "ID": 12,
     "Marke": "Mercedes",
     "Modell": "C 220 d (Diesel, ca. 4 l/100 km)",
     "Fahrgestellnummer": "WDD2050041A220001",
@@ -156,7 +134,7 @@
     "src": "/autos/mercedes-benz.svg"
   },
   {
-    "ID": 15,
+    "ID": 13,
     "Marke": "Mercedes",
     "Modell": "E 220 d (Diesel, ca. 4 l/100 km)",
     "Fahrgestellnummer": "WDD2130041A220002",
@@ -169,7 +147,7 @@
     "src": "/autos/mercedes-benz.svg"
   },
   {
-    "ID": 16,
+    "ID": 14,
     "Marke": "Mercedes",
     "Modell": "A 180 d (Diesel, ca. 4 l/100 km)",
     "Fahrgestellnummer": "WDD1770121A180003",
@@ -182,7 +160,7 @@
     "src": "/autos/mercedes-benz.svg"
   },
   {
-    "ID": 17,
+    "ID": 15,
     "Marke": "Mercedes",
     "Modell": "CLA 180 d (Diesel, ca. 4 l/100 km)",
     "Fahrgestellnummer": "WDD1180121A180004",

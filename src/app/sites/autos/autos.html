@@ -14,10 +14,22 @@
   <table class="table table-striped" id="autoliste" aria-labelledby="tableLabel">
     <thead>
       <tr>
-        <th style="max-width: 400px">ID</th>
+        <th style="max-width: 400px" [attr.aria-sort]="ariaSort('ID')">
+          <button type="button" class="sort-button" (click)="sortBy('ID')">
+            ID{{ sortIndicator('ID') }}
+          </button>
+        </th>
         <th></th>
-        <th>Marke</th>
-        <th>Modell</th>
+        <th [attr.aria-sort]="ariaSort('Marke')">
+          <button type="button" class="sort-button" (click)="sortBy('Marke')">
+            Marke{{ sortIndicator('Marke') }}
+          </button>
+        </th>
+        <th [attr.aria-sort]="ariaSort('Modell')">
+          <button type="button" class="sort-button" (click)="sortBy('Modell')">
+            Modell{{ sortIndicator('Modell') }}
+          </button>
+        </th>
         <th class="buttonColumn">
           <a routerLink="/autos/0" [queryParams]="{ viewstate: 'new' }">Neu</a>
         </th>

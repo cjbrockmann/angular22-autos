@@ -13,6 +13,21 @@
   width: auto;
 }
 
+.sort-button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+  font-weight: 700;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sort-button:hover {
+  text-decoration: underline;
+}
+
 @media only screen and (min-width: 600px) {
   .buttonColumn {
     width: 200px !important;
