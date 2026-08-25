@@ -1,67 +1,51 @@
 # Kundenservice (Angular 22)
 
-Neuimplementierung der Angular-12-Anwendung mit aktuellem Angular 22.1.
+Demo einer kleinen Kundenservice-Anwendung: Fahrzeuge, Händler und Kunden verwalten. Neuimplementierung einer Angular-12-App mit **Angular 22.1**, Standalone-Komponenten und Bootstrap 5.
 
-Die App lädt Fahrzeug-, Kunden- und Händlerdaten aus lokalen JSON-Dateien in einen Singleton-Speicher (`DataStore`) und simuliert dort das Ändern und Speichern. Das Layout nutzt Bootstrap 5.
+Online ausprobieren: [StackBlitz](https://stackblitz.com/~/github.com/cjbrockmann/angular22-autos)
 
-Die folgenden Befehle gelten im Verzeichnis `neu/`.
+## Was die App zeigt
 
-## Voraussetzungen
+- Übersichten mit Filter (Marke bzw. Ort)
+- Details, Neu anlegen, Editieren und Löschen (CRUD im Speicher)
+- Verknüpfung Auto ↔ Kunde ↔ Händler
+- Marken-Icons unter `public/autos/`
 
-Einmalig die Abhängigkeiten installieren:
+Routen: `/home`, `/autos`, `/autos/:ID`, `/haendler`, `/haendler/:ID`, `/person`, `/person/:ID`.  
+Query-Parameter `viewstate` steuert die Detailansicht (`details`, `edit`, `new`).
 
-```powershell
-Set-Location .\neu
+## Datenhaltung
+
+Beim Start lädt `DataStore` die Seed-Daten **einmal per HTTP GET**:
+
+- `/data/autos.json`
+- `/data/haendler.json`
+- `/data/kunden.json`
+
+Die Dateien liegen in `public/data/` und werden vom Dev-Server bzw. Build ausgeliefert. Danach hält ein Singleton die Listen im Speicher. Speichern und Löschen ändern nur diese Kopie — ein Reload stellt den JSON-Stand wieder her.
+
+## Technik
+
+- Angular 22.1, ausschließlich Standalone-Komponenten
+- Start über `bootstrapApplication` und `provideAppInitializer` (lädt den Store)
+- Zustand im `DataStore` (`providedIn: 'root'`, Signals)
+- Layout mit Bootstrap 5
+- Tests mit Vitest (`ng test`)
+- Node `22.22.3` (siehe `.nvmrc`)
+
+## Starten
+
+Befehle im Projektverzeichnis (dieses Repo bzw. Ordner `neu/`):
+
+```bash
+nvm use          # optional, liest .nvmrc
 npm install
-```
-
-```bash
-cd neu
-npm install
-```
-
-## Entwicklungsserver
-
-```powershell
-Set-Location .\neu
 npm start
 ```
 
-```bash
-cd neu
-npm start
-```
-
-Anschließend unter `http://localhost:4200/` öffnen.
-
-Wenn die PowerShell-Session bereits in `neu/` liegt:
-
-```powershell
-npm start
-```
-
-## Build
-
-```powershell
-Set-Location .\neu
-npm run build
-```
+Die App öffnet unter `http://localhost:4200/`. Mit Browser-Start: `npm start -- --open`.
 
 ```bash
-cd neu
-npm run build
-```
-
-Das Ergebnis liegt unter `neu/dist/neu/`.
-
-## Tests
-
-```powershell
-Set-Location .\neu
-npm test
-```
-
-```bash
-cd neu
-npm test
+npm test         # Unit-Tests (Vitest)
+npm run build    # Produktion nach dist/neu/
 ```
