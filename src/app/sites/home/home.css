@@ -1,0 +1,110 @@
+.home {
+  max-width: 1100px;
+  margin: 1.5rem auto 0;
+  padding: 0 0.75rem 4rem;
+}
+
+.home-hero {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 0.75rem;
+  padding: 2rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: #6c757d;
+  margin-bottom: 0.35rem;
+}
+
+.home-hero h1 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin-bottom: 0.75rem;
+}
+
+.home-lead {
+  max-width: 40rem;
+  margin: 0;
+  color: #495057;
+}
+
+.home-stat {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.75rem;
+  padding: 1rem 1.1rem;
+  height: 100%;
+}
+
+.home-stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.home-stat-label {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.home-card {
+  display: block;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.home-card:hover {
+  border-color: #0d6efd;
+  box-shadow: 0 0.5rem 1.25rem rgba(13, 110, 253, 0.12);
+  color: inherit;
+}
+
+.home-card h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.4rem;
+}
+
+.home-card p {
+  color: #6c757d;
+  margin-bottom: 0.75rem;
+}
+
+.home-card-icon {
+  height: 40px;
+  width: auto;
+}
+
+.home-card-icon-muted {
+  height: 36px;
+}
+
+.home-card-link {
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+.home-note {
+  background: #f8f9fa;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.home-note ol {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.home-note li + li {
+  margin-top: 0.25rem;
+}

@@ -1,13 +1,77 @@
-<div id="home">
-  <h1>
-    <a routerLink="/autos" title="Click mich!">Fahrzeug-Übersicht</a>
-  </h1>
+<div id="home" class="home">
+  <section class="home-hero">
+    <p class="home-kicker">Kundenservice-Demo</p>
+    <h1>Fahrzeuge, Händler und Kunden im Blick</h1>
+    <p class="home-lead">
+      Die App lädt die Seed-Daten beim Start einmal per HTTP aus <code>/data/*.json</code> in
+      einen zentralen Speicher. Anlegen, ändern und löschen wirkt nur dort — die Dateien bleiben
+      unverändert.
+    </p>
+  </section>
+
+  <section class="row g-3 mb-4" aria-label="Bestand">
+    <div class="col-6 col-lg-3">
+      <div class="home-stat">
+        <div class="home-stat-value">{{ carCount() }}</div>
+        <div class="home-stat-label">Fahrzeuge</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="home-stat">
+        <div class="home-stat-value">{{ dealerCount() }}</div>
+        <div class="home-stat-label">Händler</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="home-stat">
+        <div class="home-stat-value">{{ customerCount() }}</div>
+        <div class="home-stat-label">Kunden</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="home-stat">
+        <div class="home-stat-value">{{ brands().length }}</div>
+        <div class="home-stat-label">Marken</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row g-3 mb-4">
+    <div class="col-md-4">
+      <a class="home-card" routerLink="/autos">
+        <img class="home-card-icon" src="/autos/ford.svg" alt="" />
+        <h2>Fahrzeuge</h2>
+        <p>Bestand filtern, Details öffnen, Datensätze anlegen oder speichern.</p>
+        <span class="home-card-link">Fahrzeug-Übersicht</span>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a class="home-card" routerLink="/haendler">
+        <img class="home-card-icon" src="/autos/mercedes-benz.svg" alt="" />
+        <h2>Händler</h2>
+        <p>
+          Partnerbetriebe nach Ort filtern. Aktuell in
+          {{ dealerCities().join(', ') }}.
+        </p>
+        <span class="home-card-link">Händler-Übersicht</span>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a class="home-card" routerLink="/person">
+        <img class="home-card-icon home-card-icon-muted" src="/autos/quant.svg" alt="" />
+        <h2>Kunden</h2>
+        <p>Personenstammdaten pflegen und den Fahrzeugen zuordnen.</p>
+        <span class="home-card-link">Kunden-Übersicht</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="home-note">
+    <h2 class="h6">So funktioniert der Speicher</h2>
+    <ol>
+      <li>Die Dateien unter <code>/data/</code> werden einmal per HTTP GET geladen.</li>
+      <li>Der <code>DataStore</code> hält sie als Singleton im Speicher.</li>
+      <li>CRUD-Aktionen ändern nur diese Kopie, bis die Seite neu geladen wird.</li>
+    </ol>
+  </section>
 </div>
-<p style="text-align: center; margin-top: 40px">
-  Diese Anwendung lädt Daten aus einer lokalen JSON-Datei und stellt sie in einem zentralen lokalen
-  Ort zur Verfügung.
-  <br />
-  Damit wird das Verändern der Daten simuliert.
-  <br />
-  (Es liegt ein Singleton-Pattern zugrunde. Die Daten werden nur dort verändert.)
-</p>

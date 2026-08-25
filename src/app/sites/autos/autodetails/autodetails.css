@@ -11,3 +11,8 @@
 #autoeditieren {
   max-width: 1200px;
 }
+
+.auto-icon {
+  height: 96px;
+  width: auto;
+}

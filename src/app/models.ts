@@ -7,6 +7,7 @@ export interface CARS {
   HaendlerID: number | null;
   Erstzulassung: string;
   ErstKennzeichen: string;
+  src?: string;
   Kunde?: string;
   Haendler?: string;
 }

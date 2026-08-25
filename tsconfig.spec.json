@@ -9,6 +9,8 @@
   },
   "include": [
     "src/**/*.d.ts",
-    "src/tests/**/*.spec.ts"
+    "src/**/*.spec.ts",
+    "src/app/testing/**/*.ts",
+    "public/data/**/*.json"
   ]
 }

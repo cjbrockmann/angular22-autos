@@ -59,6 +59,14 @@
           <th>ErstKennzeichen</th>
           <td>{{ auto.ErstKennzeichen }}</td>
         </tr>
+        @if (auto.src) {
+          <tr>
+            <th>Bild</th>
+            <td>
+              <img class="auto-icon" [src]="auto.src" [alt]="auto.Marke" />
+            </td>
+          </tr>
+        }
       </tbody>
     </table>
 
@@ -75,6 +83,13 @@
           (click)="selectAction('edit')"
           >Zum Editieren</a
         >
+      </div>
+      <div class="col">
+        @if (auto.ID) {
+          <button type="button" class="btn btn-outline-danger" (click)="deleteAndLeave()">
+            Löschen
+          </button>
+        }
       </div>
     </div>
   </div>

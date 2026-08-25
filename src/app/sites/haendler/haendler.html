@@ -1,1 +1,45 @@
-<p>Händler</p>
+<div class="row">
+  <div class="col"><h3>Händler</h3></div>
+  <div class="col">
+    <select #ort class="form-select markenCombobox" (change)="onCitySelect(ort.value)">
+      <option value="">{{ firstLabel() }}</option>
+      @for (city of cities(); track city) {
+        <option [value]="city">{{ city }}</option>
+      }
+    </select>
+  </div>
+</div>
+
+@if (dealers(); as dealerList) {
+  <table class="table table-striped" id="haendlerliste" aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th style="max-width: 400px">ID</th>
+        <th>Firmenname</th>
+        <th>Ort</th>
+        <th class="buttonColumn">
+          <a routerLink="/haendler/0" [queryParams]="{ viewstate: 'new' }">Neu</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (dealer of dealerList; track dealer.ID) {
+        <tr>
+          <td>{{ dealer.ID }}</td>
+          <td>{{ dealer.Firmenname }}</td>
+          <td>{{ dealer.Ort }}</td>
+          <td class="text-nowrap">
+            <a [routerLink]="['/haendler', dealer.ID]" [queryParams]="{ viewstate: 'details' }"
+              >Details</a
+            >
+            &nbsp;&nbsp;
+            <a [routerLink]="['/haendler', dealer.ID]" [queryParams]="{ viewstate: 'edit' }">Edit</a>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+} @else {
+  <p><em>Loading...</em></p>
+}
+<br /><br />

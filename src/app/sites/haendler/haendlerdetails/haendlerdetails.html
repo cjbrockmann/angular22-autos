@@ -1,0 +1,159 @@
+<div class="row">
+  <div class="col">
+    @if (viewstate === 'details') {
+      <h3>Details</h3>
+    }
+    @if (viewstate === 'edit') {
+      <h3>Editieren</h3>
+    }
+    @if (viewstate === 'new') {
+      <h3>Neue anlegen</h3>
+    }
+  </div>
+  <div class="col">
+    @if (viewstate !== 'new') {
+      <a
+        routerLink="/haendler/0"
+        [queryParams]="{ viewstate: 'new' }"
+        (click)="selectAction('new')"
+        >Neuen&nbsp;Datensatz&nbsp;anlegen</a
+      >
+    }
+  </div>
+</div>
+
+@if (!dealer) {
+  <p><em>Loading...</em></p>
+}
+
+@if (viewstate === 'details' && dealer) {
+  <div id="haendlerdetails">
+    <table class="table table-striped" id="haendlerliste">
+      <tbody>
+        <tr>
+          <th>ID</th>
+          <td>{{ dealer.ID }}</td>
+        </tr>
+        <tr>
+          <th>Firmenname</th>
+          <td>{{ dealer.Firmenname }}</td>
+        </tr>
+        <tr>
+          <th>PLZ</th>
+          <td>{{ dealer.PLZ }}</td>
+        </tr>
+        <tr>
+          <th>Ort</th>
+          <td>{{ dealer.Ort }}</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{{ dealer.Email }}</td>
+        </tr>
+        <tr>
+          <th>Telefon</th>
+          <td>{{ dealer.Telefon }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row" style="max-width: 700px">
+      <div class="col">
+        <button type="button" class="btn btn-primary" routerLink="/haendler">
+          Zurück zur Übersicht
+        </button>
+      </div>
+      <div class="col">
+        <a
+          [routerLink]="['/haendler', dealer.ID]"
+          [queryParams]="{ viewstate: 'edit' }"
+          (click)="selectAction('edit')"
+          >Zum Editieren</a
+        >
+      </div>
+      <div class="col">
+        @if (dealer.ID) {
+          <button type="button" class="btn btn-outline-danger" (click)="deleteAndLeave()">
+            Löschen
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+}
+
+@if (editmodus && dealer) {
+  <div id="haendlereditieren">
+    <table class="table table-striped" id="haendlerliste">
+      <tbody>
+        <tr>
+          <th class="editlabel">ID</th>
+          <td>{{ dealer.ID }}</td>
+        </tr>
+        <tr>
+          <th>Firmenname</th>
+          <td>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="dealer.Firmenname"
+              name="firmenname"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>PLZ</th>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="dealer.PLZ" name="plz" />
+          </td>
+        </tr>
+        <tr>
+          <th>Ort</th>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="dealer.Ort" name="ort" />
+          </td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="dealer.Email" name="email" />
+          </td>
+        </tr>
+        <tr>
+          <th>Telefon</th>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="dealer.Telefon" name="telefon" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row" style="max-width: 700px">
+      <div class="col">
+        <button type="button" class="btn btn-primary" routerLink="/haendler">
+          Zurück zur Übersicht
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-success" (click)="saveAndStay()">Speichern</button>
+      </div>
+      <div class="col">
+        @if (viewstate !== 'new') {
+          <a
+            [routerLink]="['/haendler', dealer.ID]"
+            [queryParams]="{ viewstate: 'details' }"
+            (click)="selectAction('details')"
+            >Zur Detailansicht</a
+          >
+        }
+      </div>
+    </div>
+  </div>
+}
+
+@if (message) {
+  <div class="alert alert-success mt-3 mb-3" role="alert">{{ message }}</div>
+}
+@if (errorMessage) {
+  <div class="alert alert-danger mt-3 mb-3" role="alert">{{ errorMessage }}</div>
+}

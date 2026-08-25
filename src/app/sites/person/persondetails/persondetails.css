@@ -1,0 +1,13 @@
+#persondetails {
+  max-width: 1000px;
+}
+
+@media only screen and (min-width: 600px) {
+  .editlabel {
+    width: 300px !important;
+  }
+}
+
+#personeditieren {
+  max-width: 1200px;
+}

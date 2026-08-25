@@ -15,6 +15,7 @@
     <thead>
       <tr>
         <th style="max-width: 400px">ID</th>
+        <th></th>
         <th>Marke</th>
         <th>Modell</th>
         <th class="buttonColumn">
@@ -26,6 +27,11 @@
       @for (auto of carList; track auto.ID) {
         <tr>
           <td>{{ auto.ID }}</td>
+          <td>
+            @if (auto.src) {
+              <img class="auto-icon-sm" [src]="auto.src" [alt]="auto.Marke" />
+            }
+          </td>
           <td>{{ auto.Marke }}</td>
           <td [innerHTML]="auto.Modell"></td>
           <td class="text-nowrap">

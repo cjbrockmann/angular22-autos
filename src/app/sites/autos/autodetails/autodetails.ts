@@ -77,6 +77,7 @@ export class Autodetails implements OnInit {
         HaendlerID: null,
         Erstzulassung: '',
         ErstKennzeichen: '',
+        src: '',
       };
     }
 
@@ -92,6 +93,14 @@ export class Autodetails implements OnInit {
         queryParams: { viewstate: 'details' },
       });
     }
+  }
+
+  deleteAndLeave(): void {
+    if (!this.auto || this.viewstate === 'new') {
+      return;
+    }
+    this.store.deleteCar(this.auto.ID);
+    void this.router.navigate(['/autos']);
   }
 
   private loadCar(): void {
@@ -111,7 +120,21 @@ export class Autodetails implements OnInit {
       HaendlerID: null,
       Erstzulassung: '',
       ErstKennzeichen: '',
+      src: '',
     };
+  }
+
+  private iconForBrand(brand: string): string {
+    switch (brand) {
+      case 'Ford':
+        return '/autos/ford.svg';
+      case 'Mercedes':
+        return '/autos/mercedes-benz.svg';
+      case 'Quant':
+        return '/autos/quant.svg';
+      default:
+        return '';
+    }
   }
 
   private assignDealer(): void {
@@ -136,6 +159,10 @@ export class Autodetails implements OnInit {
     if (!this.auto.Marke) {
       this.errorMessage = 'Bitte Daten vervollständigen!';
       return;
+    }
+
+    if (!this.auto.src) {
+      this.auto.src = this.iconForBrand(this.auto.Marke);
     }
 
     this.assignDealer();

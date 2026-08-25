@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
-import { App } from '../app/app';
+import { App } from './app';
 
 describe('App', () => {
   beforeEach(async () => {
@@ -20,5 +20,8 @@ describe('App', () => {
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.navbar-brand')?.textContent).toContain('Kundenservice');
+    expect(compiled.textContent).toContain('Autos');
+    expect(compiled.textContent).toContain('Händler');
+    expect(compiled.textContent).toContain('Kunden');
   });
 });

@@ -1,0 +1,171 @@
+<div class="row">
+  <div class="col">
+    @if (viewstate === 'details') {
+      <h3>Details</h3>
+    }
+    @if (viewstate === 'edit') {
+      <h3>Editieren</h3>
+    }
+    @if (viewstate === 'new') {
+      <h3>Neue anlegen</h3>
+    }
+  </div>
+  <div class="col">
+    @if (viewstate !== 'new') {
+      <a routerLink="/person/0" [queryParams]="{ viewstate: 'new' }" (click)="selectAction('new')"
+        >Neuen&nbsp;Datensatz&nbsp;anlegen</a
+      >
+    }
+  </div>
+</div>
+
+@if (!kunde) {
+  <p><em>Loading...</em></p>
+}
+
+@if (viewstate === 'details' && kunde) {
+  <div id="persondetails">
+    <table class="table table-striped" id="kundenliste">
+      <tbody>
+        <tr>
+          <th>ID</th>
+          <td>{{ kunde.ID }}</td>
+        </tr>
+        <tr>
+          <th>Anrede</th>
+          <td>{{ kunde.Anrede }}</td>
+        </tr>
+        <tr>
+          <th>Vorname</th>
+          <td>{{ displayName(kunde.Vorname) }}</td>
+        </tr>
+        <tr>
+          <th>Nachname</th>
+          <td>{{ kunde.Nachname }}</td>
+        </tr>
+        <tr>
+          <th>PLZ</th>
+          <td>{{ kunde.PLZ }}</td>
+        </tr>
+        <tr>
+          <th>Ort</th>
+          <td>{{ kunde.Ort }}</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{{ kunde.Email }}</td>
+        </tr>
+        <tr>
+          <th>Telefon</th>
+          <td>{{ displayName(kunde.Telefon) }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row" style="max-width: 700px">
+      <div class="col">
+        <button type="button" class="btn btn-primary" routerLink="/person">
+          Zurück zur Übersicht
+        </button>
+      </div>
+      <div class="col">
+        <a
+          [routerLink]="['/person', kunde.ID]"
+          [queryParams]="{ viewstate: 'edit' }"
+          (click)="selectAction('edit')"
+          >Zum Editieren</a
+        >
+      </div>
+      <div class="col">
+        @if (kunde.ID) {
+          <button type="button" class="btn btn-outline-danger" (click)="deleteAndLeave()">
+            Löschen
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+}
+
+@if (editmodus && kunde) {
+  <div id="personeditieren">
+    <table class="table table-striped" id="kundenliste">
+      <tbody>
+        <tr>
+          <th class="editlabel">ID</th>
+          <td>{{ kunde.ID }}</td>
+        </tr>
+        <tr>
+          <th>Anrede</th>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="kunde.Anrede" name="anrede" />
+          </td>
+        </tr>
+        <tr>
+          <th>Vorname</th>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="kunde.Vorname" name="vorname" />
+          </td>
+        </tr>
+        <tr>
+          <th>Nachname</th>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="kunde.Nachname" name="nachname" />
+          </td>
+        </tr>
+        <tr>
+          <th>PLZ</th>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="kunde.PLZ" name="plz" />
+          </td>
+        </tr>
+        <tr>
+          <th>Ort</th>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="kunde.Ort" name="ort" />
+          </td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="kunde.Email" name="email" />
+          </td>
+        </tr>
+        <tr>
+          <th>Telefon</th>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="kunde.Telefon" name="telefon" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row" style="max-width: 700px">
+      <div class="col">
+        <button type="button" class="btn btn-primary" routerLink="/person">
+          Zurück zur Übersicht
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-success" (click)="saveAndStay()">Speichern</button>
+      </div>
+      <div class="col">
+        @if (viewstate !== 'new') {
+          <a
+            [routerLink]="['/person', kunde.ID]"
+            [queryParams]="{ viewstate: 'details' }"
+            (click)="selectAction('details')"
+            >Zur Detailansicht</a
+          >
+        }
+      </div>
+    </div>
+  </div>
+}
+
+@if (message) {
+  <div class="alert alert-success mt-3 mb-3" role="alert">{{ message }}</div>
+}
+@if (errorMessage) {
+  <div class="alert alert-danger mt-3 mb-3" role="alert">{{ errorMessage }}</div>
+}
